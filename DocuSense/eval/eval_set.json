@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "description": "Held-out QA pairs for RAGAS evaluation across three document types.",
+  "examples": [
+    {
+      "id": "sec001",
+      "doc_type": "10-K",
+      "question": "What were Apple's total net sales for fiscal year 2023?",
+      "ground_truth": "$383.3 billion",
+      "relevant_chunks": []
+    },
+    {
+      "id": "sec002",
+      "doc_type": "10-K",
+      "question": "What risk factors does the filing identify related to supply chain concentration?",
+      "ground_truth": "The filing identifies concentration risk from reliance on single-source suppliers and manufacturing partners in Asia.",
+      "relevant_chunks": []
+    },
+    {
+      "id": "contract001",
+      "doc_type": "contract",
+      "question": "What is the governing law clause in this agreement?",
+      "ground_truth": "",
+      "relevant_chunks": []
+    },
+    {
+      "id": "contract002",
+      "doc_type": "contract",
+      "question": "What are the indemnification obligations of each party?",
+      "ground_truth": "",
+      "relevant_chunks": []
+    },
+    {
+      "id": "form001",
+      "doc_type": "form",
+      "question": "What is the applicant's date of birth listed on the form?",
+      "ground_truth": "",
+      "relevant_chunks": []
+    }
+  ]
+}
