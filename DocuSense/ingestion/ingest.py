@@ -122,7 +122,7 @@ def _store(engine: Engine, doc: ParsedDocument, pairs: list[tuple[ParsedChunk, l
                     (chunk_id, doc_id, text, page, section, doc_type, element_type, embedding)
                 VALUES
                     (:chunk_id, :doc_id, :text, :page, :section, :doc_type, :element_type,
-                     :embedding::vector)
+                     CAST(:embedding AS vector))
             """),
             rows,
         )

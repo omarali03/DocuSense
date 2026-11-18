@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from langgraph.graph import END, START, StateGraph
-from langgraph.graph.graph import CompiledGraph
+from langgraph.graph.state import CompiledStateGraph
 
 from agents.state import AgentState
 from agents.router import router_node
@@ -30,7 +30,7 @@ def _route_after_verifier(state: AgentState) -> str:
     return "retrieval"
 
 
-def build_graph() -> CompiledGraph:
+def build_graph() -> CompiledStateGraph:
     graph: StateGraph[AgentState] = StateGraph(AgentState)
 
     graph.add_node("router", router_node)

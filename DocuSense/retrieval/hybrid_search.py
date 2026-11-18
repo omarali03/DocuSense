@@ -49,10 +49,10 @@ def _dense_search(query_vec: list[float], top_k: int, doc_type: str | None) -> l
 
     sql = text(f"""
         SELECT chunk_id, doc_id, text, page, section, doc_type,
-               1 - (embedding <=> :vec::vector) AS score
+               1 - (embedding <=> CAST(:vec AS vector)) AS score
         FROM chunks
         WHERE 1=1 {filter_clause}
-        ORDER BY embedding <=> :vec::vector
+        ORDER BY embedding <=> CAST(:vec AS vector)
         LIMIT :k
     """)
 
